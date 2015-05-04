@@ -1,0 +1,38 @@
+<html t:type="layout" title="rezervacije Index"
+      t:sidebarTitle="Framework Version"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+        <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+	
+	<t:form id="registracija" class="col-lg-6">
+<fieldset>
+<legend>Registracija korisnika</legend>
+
+	<div class="form-group col-lg-6">
+		<t:Label t:for="username" />
+		<t:TextField t:value="k.username" t:id="username"
+			class="form-control" />
+	</div>
+	<div class="form-group col-lg-6">
+		<t:Label t:for="password" />
+		<t:PasswordField t:value="k.password" t:id="password"
+			class="form-control" />
+	</div>
+	<div class="form-group col-lg-6">
+		<t:Label t:for="password2" />
+		<t:PasswordField t:value="password2" t:id="password2"
+			class="form-control" />
+	</div>
+	
+	<div class="form-group  col-lg-6">
+		<t:Label t:for="uloge" />
+		<t:Select t:value="odabranaUloga" t:model="uloge" t:id="uloge"
+			class="form-control" />
+	</div>
+	<div class="form-group  col-lg-6">
+		<t:Submit class="form-control" />
+	</div>
+</fieldset>
+</t:form>   
+</html>

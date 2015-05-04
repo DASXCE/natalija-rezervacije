@@ -1,0 +1,50 @@
+<html t:type="layout"
+	title="rezervacija leta ${odabraniLet.polaziste}-${odabraniLet.odrediste}-${odabraniLet.avion.oznaka}"
+	t:sidebarTitle="Framework Version"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+<!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+<t:Form t:id="rezervacija">
+	<div class="form-group col-lg-6">
+		<h2>Sjediste:</h2><br/>
+		<t:radiogroup t:id="klasa">
+			<t:radio t:id="prva" />
+			<t:label for="prva">Prva Klasa</t:label>
+			<br />
+			<t:radio t:id="biznis" />
+			<t:label for="biznis">Biznis Klasa</t:label>
+			<br />
+			<t:radio t:id="ekonomska" />
+			<t:label for="ekonomska">Ekonomska Klasa</t:label>
+		</t:radiogroup>
+	</div>
+	<div class="form-group col-lg-6">
+
+		<div class="form-group col-lg-6">
+			<t:Label t:for="brojPasosa" />
+			<t:TextField t:value="putnik.brojPasosa" t:id="brojPasosa"
+				class="form-control" />
+		</div>
+		<div class="form-group col-lg-6">
+			<t:Label t:for="ime" />
+			<t:TextField t:value="putnik.ime" t:id="ime" class="form-control" />
+		</div>
+
+		<div class="form-group col-lg-6">
+			<t:Label t:for="prezime" />
+			<t:TextField t:value="putnik.prezime" t:id="prezime"
+				class="form-control" />
+		</div>
+
+		<div class="form-group col-lg-6">
+			<t:Label t:for="datumRodjenja" />
+			<t:DateField t:value="putnik.datumRodjenja" t:id="datumRodjenja"
+				class="form-control" />
+		</div>
+		<div class="form-group  col-lg-6">
+			<t:Submit class="form-control" />
+		</div>
+	</div>
+</t:Form>
+</html>

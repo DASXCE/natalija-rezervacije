@@ -1,0 +1,2 @@
+INSERT INTO `rez`.`Uloga` (`id`, `uloga`) VALUES ('1', 'admin'), ('2', 'user');
+INSERT INTO `rez`.`Korisnik` (`id`, `password`, `username`, `uloga_id`) VALUES ('1', 'admin', 'admin', '1'), ('2','user','user','2');

@@ -1,0 +1,44 @@
+<html t:type="layout"
+	title="informacije za let ${odabraniLet.polaziste}-${odabraniLet.odrediste}-${odabraniLet.avion.oznaka}"
+	t:sidebarTitle="Framework Version"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+<!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+<t:Form>
+	<div class="form-group col-lg-6">
+		<div class="form-group col-lg-12">
+			<h2>Broj zauzetih sjedista:</h2>
+		</div>
+		<div class="form-group col-lg-12"></div>
+
+		<div class="form-group col-lg-6">
+			<label>Prva klasa:</label> <input t:type="textfield"
+				t:id="brojSPrveKlase" class="form-control" disabled="true" />
+		</div>
+
+		<div class="form-group col-lg-12"></div>
+
+		<div class="form-group col-lg-6">
+			<label>Biznis klasa:</label> <input t:type="textfield"
+				t:id="brojSBiznisKlase" class="form-control" disabled="true" />
+		</div>
+
+		<div class="form-group col-lg-12"></div>
+
+		<div class="form-group col-lg-6">
+			<label>Ekonomska klasa:</label> <input t:type="textfield"
+				t:id="brojSEkonomskeKlase" class="form-control" disabled="true" />
+		</div>
+	</div>
+	<div class="form-group col-lg-6">
+		<h2>Lista putnika:</h2>
+		<table t:type="Grid" source="putnici" row="putnik" add="sjediste">
+			<!-- "name" must be a parameter of "oneObject"'s class -->
+			<p:sjedisteCell>
+				${getSjediste()}
+			</p:sjedisteCell>
+		</table>
+
+	</div>
+</t:Form>
+</html>

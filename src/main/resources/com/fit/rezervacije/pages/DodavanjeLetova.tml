@@ -1,0 +1,112 @@
+<html t:type="layout" title="Red letenja"
+	t:sidebarTitle="Framework Version"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	xmlns:p="tapestry:parameter">
+<!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+<t:If t:test="admin">
+	<t:form t:id="novilet" class="col-lg-6">
+		<fieldset>
+			<legend>Dodaj novi red letenja</legend>
+
+			<div class="form-group col-lg-6">
+				<t:Label t:for="polaziste" />
+				<t:TextField t:value="let.polaziste" t:id="polaziste"
+					class="form-control" />
+			</div>
+			<div class="form-group col-lg-6">
+				<t:Label t:for="odrediste" />
+				<t:TextField t:value="let.odrediste" t:id="odrediste"
+					class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="vrijemePolaska" />
+				<t:DateField t:value="let.vrijemePolaska" t:id="vrijemePolaska"
+					class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="satPolaska" />
+				<t:TextField t:value="let.vrijemePolaska.hours" t:id="satPolaska"
+					t:type="number" class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="minutPolaska" />
+				<t:TextField t:value="let.vrijemePolaska.minutes"
+					t:id="minutPolaska" t:type="number" class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="vrijemeDolaska" />
+				<t:DateField t:value="let.vrijemeDolaska" t:id="vrijemeDolaska"
+					class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="satDolaska" />
+				<t:TextField t:value="let.vrijemeDolaska.hours" t:id="satDolaska"
+					t:type="number" class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="minutDolaska" />
+				<t:TextField t:value="let.vrijemeDolaska.minutes"
+					t:id="minutDolaska" t:type="number" class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="avion" />
+				<t:Select t:value="odabraniAvion" t:model="avioni" t:id="avion"
+					class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Submit class="form-control" />
+			</div>
+		</fieldset>
+	</t:form>
+</t:If>
+<t:If t:test="isUser()">
+
+	<t:form t:id="pretraga" class="col-lg-6">
+		<fieldset>
+			<legend>pretrazi red letenja</legend>
+
+			<div class="form-group col-lg-6">
+				<t:Label t:for="polaziste_pretraga" />
+				<t:TextField t:value="let.polaziste" t:id="polaziste_pretraga"
+					class="form-control" />
+			</div>
+			<div class="form-group col-lg-6">
+				<t:Label t:for="odrediste_pretraga" />
+				<t:TextField t:value="let.odrediste" t:id="odrediste_pretraga"
+					class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="polazak_od" />
+				<t:DateField t:value="polazakOd"
+					t:id="polazak_od" class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="polazak_do" />
+				<t:DateField t:value="polazakDo"
+					t:id="polazak_do" class="form-control" />
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:Submit class="form-control btn btn-warning" value="trazi"
+					t:id="trazi" />
+			</div>
+		</fieldset>
+	</t:form>
+</t:If>
+
+<div class="col-lg-6">
+
+	<t:Grid t:source="letovi" t:row="let" add="avion">
+		<p:avionCell>
+			${let.avion.oznaka}
+		</p:avionCell>
+		<p:vrijemePolaskaCell>
+			${let.vrijemePolaska.toString()}
+		</p:vrijemePolaskaCell>
+		<p:vrijemeDolaskaCell>
+			${let.vrijemeDolaska.toString()}
+		</p:vrijemeDolaskaCell>
+	</t:Grid>
+</div>
+
+</html>
