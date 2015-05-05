@@ -29,11 +29,14 @@ Description: A Web 2.0 design with fluid width suitable for blogs and small webs
 		<div class="logo">
 			<h1>
 				<t:If t:test="korisnikExists">
-					<t:ActionLink t:id="logout">[Logout ${korisnik.username}]</t:ActionLink>
+					<t:ActionLink t:id="logout" class="btn btn-danger">Logout</t:ActionLink>
+					<p:else>
+					<t:pagelink page="Login" class="btn btn-warning">LOGIN</t:pagelink>
+					</p:else>
 				</t:If>
 				||
 				<t:pagelink page="index">com.fit:rezervacije</t:pagelink>
-				&nbsp; version ${appVersion}
+				&nbsp; username: ${username}
 			</h1>
 		</div>
 		<div class="menu">

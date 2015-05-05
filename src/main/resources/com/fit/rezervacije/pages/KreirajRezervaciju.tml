@@ -10,13 +10,13 @@
 		<h2>Sjediste:</h2><br/>
 		<t:radiogroup t:id="klasa">
 			<t:radio t:id="prva" />
-			<t:label for="prva">Prva Klasa</t:label>
+			<t:label for="prva">Prva Klasa (${odabraniLet.cijenaPKlase} &#8364;)</t:label>
 			<br />
 			<t:radio t:id="biznis" />
-			<t:label for="biznis">Biznis Klasa</t:label>
+			<t:label for="biznis">Biznis Klasa (${odabraniLet.cijenaBKlase} &#8364;)</t:label>
 			<br />
 			<t:radio t:id="ekonomska" />
-			<t:label for="ekonomska">Ekonomska Klasa</t:label>
+			<t:label for="ekonomska">Ekonomska Klasa (${odabraniLet.cijenaEKlase} &#8364;)</t:label>
 		</t:radiogroup>
 	</div>
 	<div class="form-group col-lg-6">

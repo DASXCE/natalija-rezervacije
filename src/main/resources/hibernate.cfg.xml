@@ -7,7 +7,7 @@
 		<property name="hibernate.connection.url">jdbc:mysql://localhost/rez</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.connection.password"></property>
+		<property name="hibernate.connection.password">root</property>
 		<property name="hibernate.connection.zeroDateTimeBehavior">convertToNull</property>
 		<!-- comment following line during 2nd run -->
 		<property name="hbm2ddl.auto">create</property>

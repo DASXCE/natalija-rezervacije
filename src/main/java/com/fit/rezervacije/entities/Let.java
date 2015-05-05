@@ -32,6 +32,12 @@ public class Let {
 
 	private Date vrijemeDolaska;
 
+	private double cijenaPKlase;
+
+	private double cijenaBKlase;
+
+	private double cijenaEKlase;
+
 	@ManyToOne
 	private Avion avion;
 
@@ -94,6 +100,30 @@ public class Let {
 
 	public void setAvion(Avion avion) {
 		this.avion = avion;
+	}
+
+	public double getCijenaPKlase() {
+		return cijenaPKlase;
+	}
+
+	public void setCijenaPKlase(double cijenaPKlase) {
+		this.cijenaPKlase = cijenaPKlase;
+	}
+
+	public double getCijenaBKlase() {
+		return cijenaBKlase;
+	}
+
+	public void setCijenaBKlase(double cijenaBKlase) {
+		this.cijenaBKlase = cijenaBKlase;
+	}
+
+	public double getCijenaEKlase() {
+		return cijenaEKlase;
+	}
+
+	public void setCijenaEKlase(double cijenaEKlase) {
+		this.cijenaEKlase = cijenaEKlase;
 	}
 
 	@Override

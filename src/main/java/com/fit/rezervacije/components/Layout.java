@@ -47,6 +47,13 @@ public class Layout
     
     @Property
     private boolean korisnikExists;
+    
+    public String getUsername(){
+    	if (korisnikExists) {
+			return korisnik.getUsername();
+		}
+    	return "";
+    }
 
 
     public String getClassForPageName()

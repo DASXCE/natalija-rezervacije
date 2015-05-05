@@ -5,6 +5,7 @@ package com.fit.rezervacije.pages;
 
 import javax.inject.Inject;
 
+import org.apache.tapestry5.alerts.AlertManager;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.hibernate.annotations.CommitAfter;
 import org.hibernate.Session;
@@ -24,9 +25,11 @@ public class DodavanjeAviona {
 
 	@Inject
 	private Session session;
+	@Inject
+	private AlertManager alert;
 
 	@CommitAfter
-	public void onSuccess() {
+	public Object onSuccess() {
 		for (int i = 0; i < avion.getBrojSjedistaPrveKlase(); i++) {
 			Sjediste s = new Sjediste(avion, avion.getOznaka() + "PK-"
 					+ (i + 1), KlasaSjedista.PRVA_KLASA);
@@ -45,6 +48,8 @@ public class DodavanjeAviona {
 			session.save(s);
 		}
 		session.save(avion);
+		alert.info("uspjeno dodat novi avion!");
+		return Index.class;
 	}
 
 }

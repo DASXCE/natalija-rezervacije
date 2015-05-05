@@ -63,7 +63,6 @@ public class Login {
 		}
 
 		ulogovani = korIzBaze;
-		index.setPoruka("uspjesno ste se logovali");
 		return index;
 		// return Index.class;
 	}

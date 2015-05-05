@@ -38,7 +38,7 @@
 <div class="col-lg-12"></div>
 <div class="col-lg-6">
 
-	<t:If t:test="!admin">
+	<t:If t:test="!user">
 		<t:Grid t:source="letovi" t:row="let" add="avion, rezervisi">
 			<p:avionCell>
 			${let.avion.oznaka}
@@ -58,7 +58,7 @@
 			</p:rezervisiCell>
 		</t:Grid>
 	</t:If>
-	<t:If t:test="admin">
+	<t:If t:test="user">
 		<t:Grid t:source="letovi" t:row="let" add="avion, info">
 			<p:avionCell>
 			${let.avion.oznaka}

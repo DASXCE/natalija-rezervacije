@@ -1,69 +1,36 @@
-<html t:type="layout" title="rezervacije Index"
-	t:sidebarTitle="Framework Version"
+<html t:type="layout" title="Rezervacije letova"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
 	xmlns:p="tapestry:parameter">
 <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
 
-<p>${message:greeting}</p>
-
-<p>${poruka}</p>
-
-<p>
-	The current time is: <strong>${currentTime}</strong>
-</p>
-
-<!-- A Zone is a component that can be updated in place, triggered by other components. -->
-<t:zone t:id="zone">
-	<p>
-		You have clicked the link <strong>${clickCount}</strong> times.
-	</p>
-
-	<p>
-		[
-		<t:actionlink t:id="increment">increment</t:actionlink>
-		] &nbsp; [
-		<t:actionlink t:id="incrementAjax" zone="^">increment (via Ajax)</t:actionlink>
-		]
-	</p>
-
-
-</t:zone>
-
+<img src="${context:layout/images/avion.jpg}" width="800px" />
 <p:sidebar>
-	<p>
-		You are running Tapestry version <strong>${tapestryVersion}</strong>.
-	</p>
 	<t:If t:test="guest">
-	<p>
-		[
-		<t:pagelink page="Login">LOGIN</t:pagelink>
-		]
-	</p>
+		<p>
+			<t:pagelink page="Login" class="form-control btn btn-success">LOGIN</t:pagelink>
+		</p>
 
 	</t:If>
-	<p>
-		[
-		<t:pagelink page="Index">refresh page</t:pagelink>
-		]
-	</p>
 	<t:If t:test="admin">
 		<p>
-			[
-			<t:pagelink page="dodavanjeAviona">Dodaj Avion</t:pagelink>
-			]
+			<t:pagelink page="dodavanjeAviona"
+				class="form-control btn btn-primary">Dodaj Avion</t:pagelink>
+		</p>
+		<p>
+			<t:PageLink t:page="Registracija"
+				class="form-control btn btn-primary">Registruj korisnike</t:PageLink>
+		</p>
+	</t:If>
+
+	<t:If t:test="!guest">
+		<p>
+			<t:pagelink page="dodavanjeLetova"
+				class="form-control btn btn-warning">Red letenja</t:pagelink>
 		</p>
 	</t:If>
 
 	<p>
-		[
-		<t:pagelink page="dodavanjeLetova">Red letenja</t:pagelink>
-		]
-	</p>
-
-	<p>
-		[
-		<t:pagelink page="rezervacija">rezervisi kartu</t:pagelink>
-		]
+		<t:pagelink page="rezervacija" class="form-control btn btn-warning">rezervisi kartu</t:pagelink>
 	</p>
 </p:sidebar>
 

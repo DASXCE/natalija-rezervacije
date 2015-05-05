@@ -59,8 +59,8 @@ public class Rezervacija {
 		return d;
 	}
 	
-	public boolean isAdmin() {
-		if (ulogovaniExists && ulogovani.isAdmin()) {
+	public boolean isUser() {
+		if (ulogovaniExists && ulogovani.isUser()) {
 			return true;
 		} else {
 			return false;

@@ -54,6 +54,21 @@
 				<t:Select t:value="odabraniAvion" t:model="avioni" t:id="avion"
 					class="form-control" />
 			</div>
+			<div class="form-group  col-lg-12"></div>
+			<div class="form-group  col-lg-6">
+				<t:Label t:for="cijenaPKlase" class="form-control col-lg-12"/>
+				<t:Label t:for="cijenaBKlase" class="form-control col-lg-12"/>
+				<t:Label t:for="cijenaEKlase" class="form-control col-lg-12"/>
+			</div>
+			<div class="form-group  col-lg-6">
+				<t:TextField t:value="let.cijenaPKlase" t:id="cijenaPKlase"
+					t:type="number" class="form-control col-lg-2" />
+				<t:TextField t:value="let.cijenaBKlase" t:id="cijenaBKlase"
+					t:type="number" class="form-control col-lg-2" />
+				<t:TextField t:value="let.cijenaEKlase" t:id="cijenaEKlase"
+					t:type="number" class="form-control col-lg-2" />
+			</div>
+			<div class="form-group  col-lg-12"></div>
 			<div class="form-group  col-lg-6">
 				<t:Submit class="form-control" />
 			</div>
@@ -78,13 +93,13 @@
 			</div>
 			<div class="form-group  col-lg-6">
 				<t:Label t:for="polazak_od" />
-				<t:DateField t:value="polazakOd"
-					t:id="polazak_od" class="form-control" />
+				<t:DateField t:value="polazakOd" t:id="polazak_od"
+					class="form-control" />
 			</div>
 			<div class="form-group  col-lg-6">
 				<t:Label t:for="polazak_do" />
-				<t:DateField t:value="polazakDo"
-					t:id="polazak_do" class="form-control" />
+				<t:DateField t:value="polazakDo" t:id="polazak_do"
+					class="form-control" />
 			</div>
 			<div class="form-group  col-lg-6">
 				<t:Submit class="form-control btn btn-warning" value="trazi"
